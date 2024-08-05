@@ -12,7 +12,7 @@ Write-Host "Importing Windows 10 Home 10.019045.4472 to $OSDBuilderPath...." -Fo
 Import-OSMedia -ImageName 'Windows 10 Home' -SkipGrid
 
 Write-Host "Updating Windows 10 Home 10.019045.4472 to $OSDBuilderPath...." -ForegroundColor Cyan
-Import-OSMedia -Edition Core -SkipGrid -Update -BuildNetFX
+Update-OSMedia -Download -Execute
 
 Write-Host "Downloading Feature Updates and Updating Windows 10 Home 10.019045.4472 to $OSDBuilderPath...." -ForegroundColor Cyan
 OSDBuilder -Download FeatureUpdates
