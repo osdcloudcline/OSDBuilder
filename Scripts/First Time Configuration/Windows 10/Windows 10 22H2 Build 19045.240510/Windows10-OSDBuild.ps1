@@ -38,20 +38,20 @@ do
         Invoke-Expression $($Windows10Home.Content)
       }
   '2' { cls
-        $Domain = Invoke-WebRequest ("https://github.com/osdcloudcline/Scripts/raw/main/Domain%20Administration/DomainAdminMain.ps1")
-        Invoke-Expression $($Domain.Content)
+        $Windows10Pro = Invoke-WebRequest ("https://github.com/osdcloudcline/Scripts/raw/main/Domain%20Administration/DomainAdminMain.ps1")
+        Invoke-Expression $($Windows10Pro.Content)
         }
   '3' { cls
-        $Local = Invoke-WebRequest ("https://github.com/osdcloudcline/Scripts/raw/main/Local%20Computer/LocalPCMain.ps1")
-        Invoke-Expression $($Local.Content)
+        $Windows10Enterprise = Invoke-WebRequest ("https://github.com/osdcloudcline/Scripts/raw/main/Local%20Computer/LocalPCMain.ps1")
+        Invoke-Expression $($Windows10Enterprise.Content)
         }
   '4' { cls
-        $WinGetMain = Invoke-WebRequest ("https://github.com/osdcloudcline/Scripts/raw/main/WinGet%20/WinGetMain.ps1")
-        Invoke-Expression $($WinGetMain.Content)
+        $Windows10EnterpriseVDI = Invoke-WebRequest ("https://github.com/osdcloudcline/Scripts/raw/main/WinGet%20/WinGetMain.ps1")
+        Invoke-Expression $($Windows10EnterpriseVDI.Content)
         }
   '5' { cls
-        $OSDCloud = Invoke-WebRequest ("https://github.com/osdcloudcline/Scripts/raw/main/OSD%20Cloud/OSDCloudMain.ps1")
-        Invoke-Expression $($OSDCloud.Content)
+        $Windows10ProWorkstation = Invoke-WebRequest ("https://github.com/osdcloudcline/Scripts/raw/main/OSD%20Cloud/OSDCloudMain.ps1")
+        Invoke-Expression $($Windows10ProWorkstation.Content)
         }
   '6' { cls
         $OSDBuilder = Invoke-WebRequest ("https://github.com/osdcloudcline/Scripts/raw/main/OSDBuilder/OSDBuilderMain.ps1")
@@ -123,15 +123,7 @@ do
 
 
 
-Write-Host "Checking for OSDBuilder updates..." -ForegroundColor Cyan
-Get-OSDBuilder
-Write-Host "Updating OSDBuilder..." -ForegroundColor Cyan
-OSDBuilder -Update
-Write-Host "OSDBuilder has been updated..." -ForegroundColor Cyan
 
-
-$OSDBuilderPath = Read-Host -Prompt 'Please enter a path other than on Drive C: to use as a temporary working directory'
-OSDBuilder -SetPath $OSDBuilderPath 
 
 
 
