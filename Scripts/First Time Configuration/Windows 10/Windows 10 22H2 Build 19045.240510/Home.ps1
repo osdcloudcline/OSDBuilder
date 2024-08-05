@@ -7,6 +7,7 @@ Write-Host "OSDBuilder has been updated..." -ForegroundColor Cyan
 
 $OSDBuilderPath = Read-Host -Prompt 'Please enter a path other than on Drive C: to use as a temporary working directory'
 OSDBuilder -SetPath $OSDBuilderPath 
+OSDBuilder -CreatePaths
 
 Write-Host "Importing Windows 10 Home 10.019045.4472 to $OSDBuilderPath...." -ForegroundColor Cyan
 Import-OSMedia -ImageIndex 1 'Windows 10 Home' -SkipGrid
@@ -15,7 +16,9 @@ Write-Host "Updating Windows 10 Home 10.019045.4472 to $OSDBuilderPath...." -For
 Update-OSMedia -Download -Execute
 
 Write-Host "Downloading Feature Updates and Updating Windows 10 Home 10.019045.4472 to $OSDBuilderPath...." -ForegroundColor Cyan
+OSDBuilder -Download OSMediaUpdates
 OSDBuilder -Download FeatureUpdates
+OSDBuilder -Download OneDrive
 Import-OSMedia -ImageIndex 1 -SkipGrid 
 
 Write-Host "Downloading OS Updates and Updating Windows 10 Home 10.019045.4472 to $OSDBuilderPath...." -ForegroundColor Cyan
