@@ -12,17 +12,21 @@ OSDBuilder -CreatePaths
 Write-Host "Importing Windows 10 Home 10.019045.4472 to $OSDBuilderPath...." -ForegroundColor Cyan
 Import-OSMedia -ImageIndex 1 -SkipGrid
 
+pause
+
 Write-Host "Downloading Feature Updates and Updating Windows 10 Home 10.019045.4472 to $OSDBuilderPath...." -ForegroundColor Cyan
 OSDBuilder -Download OSMediaUpdates
 OSDBuilder -Download FeatureUpdates
 OSDBuilder -Download OneDrive
-Import-OSMedia -ImageIndex 1 -SkipGrid 
-
-Write-Host "Updating Windows 10 Home 10.019045.4472 to $OSDBuilderPath...." -ForegroundColor Cyan
 Update-OSMedia -Download -Execute
+
+
+pause
 
 Write-Host "Downloading OS Updates and Updating Windows 10 Home 10.019045.4472 to $OSDBuilderPath...." -ForegroundColor Cyan
 Get-OSDBuilderDownloads -Download -GridView -UpdateArch x64 -UpdateBuild 22H2 -UpdateOS "Windows 10"
+
+pause
 
 Write-Host "Creating OSDBuild Task for: Windows 10 Home 10.019045.4472...." -ForegroundColor Cyan
 New-OSDBuildTask -TaskName "Windows 10 Home 22H2" -CustomName "Win 10 Home 22H2" -SaveAs Task -EnableNetFX3 
