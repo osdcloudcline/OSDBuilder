@@ -10,7 +10,7 @@ OSDBuilder -SetPath $OSDBuilderPath
 OSDBuilder -CreatePaths
 
 Write-Host "Importing Windows 10 Home 10.019045.4472 to $OSDBuilderPath...." -ForegroundColor Cyan
-Import-OSMedia -ImageIndex 1 'Windows 10 Home' -SkipGrid
+Import-OSMedia -ImageIndex 1 -SkipGrid
 
 Write-Host "Updating Windows 10 Home 10.019045.4472 to $OSDBuilderPath...." -ForegroundColor Cyan
 Update-OSMedia -Download -Execute
