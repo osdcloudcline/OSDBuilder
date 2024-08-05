@@ -9,14 +9,14 @@ $OSDBuilderPath = Read-Host -Prompt 'Please enter a path other than on Drive C: 
 OSDBuilder -SetPath $OSDBuilderPath 
 
 Write-Host "Importing Windows 10 Home 10.019045.4472 to $OSDBuilderPath...." -ForegroundColor Cyan
-Import-OSMedia -ImageName 'Windows 10 Home' -SkipGrid
+Import-OSMedia -ImageIndex 1 'Windows 10 Home' -SkipGrid
 
 Write-Host "Updating Windows 10 Home 10.019045.4472 to $OSDBuilderPath...." -ForegroundColor Cyan
 Update-OSMedia -Download -Execute
 
 Write-Host "Downloading Feature Updates and Updating Windows 10 Home 10.019045.4472 to $OSDBuilderPath...." -ForegroundColor Cyan
 OSDBuilder -Download FeatureUpdates
-Import-OSMedia -Edition Core -SkipGrid 
+Import-OSMedia -ImageIndex 1 -SkipGrid 
 
 Write-Host "Downloading OS Updates and Updating Windows 10 Home 10.019045.4472 to $OSDBuilderPath...." -ForegroundColor Cyan
 Get-OSDBuilderDownloads -Download -GridView -UpdateArch x64 -UpdateBuild 22H2 -UpdateOS "Windows 10"
