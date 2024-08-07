@@ -34,7 +34,7 @@ do
   switch($selection)
   {
   '1'{  cls
-        $OSDBuilderUpdate = Invoke-WebRequest("")
+        $OSDBuilderUpdate = Invoke-WebRequest("https://github.com/osdcloudcline/OSDBuilder/raw/main/PowerShell%20Module/Update.ps1")
         Invoke-Expression $($OSDBuilderUpdate.Content)
         $Windows10Home = Invoke-WebRequest("")
         Invoke-Expression $($Windows10Home.Content)
