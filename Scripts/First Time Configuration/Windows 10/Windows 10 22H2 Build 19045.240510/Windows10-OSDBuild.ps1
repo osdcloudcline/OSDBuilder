@@ -116,7 +116,7 @@ do
     until ($selection -eq '14'){exit}
     }
 
-
+Show-MainMenu
 
 
 
