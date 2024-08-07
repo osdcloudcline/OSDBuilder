@@ -34,6 +34,8 @@ do
   switch($selection)
   {
   '1'{  cls
+        $OSDBuilderUpdate = Invoke-WebRequest("")
+        Invoke-Expression $($OSDBuilderUpdate.Content)
         $Windows10Home = Invoke-WebRequest("")
         Invoke-Expression $($Windows10Home.Content)
       }
