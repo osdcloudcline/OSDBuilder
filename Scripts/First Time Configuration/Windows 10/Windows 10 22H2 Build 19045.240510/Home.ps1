@@ -12,19 +12,20 @@ Import-OSMedia -ImageIndex 1 -SkipGrid
 
 pause
 
-Write-Host "Downloading OS Updates, Feature Updates and Updating Windows 10 Home 10.019045.4472 to $OSDBuilderPath...." -ForegroundColor Cyan
+Write-Host "Downloading OS Updates, Feature Updates for Windows 10 Home 10.019045.4472 to $OSDBuilderPath...." -ForegroundColor Cyan
 Get-DownOSDBuilder -Download -GridView -UpdateArch x64 -UpdateBuild 22H2 
 pause
 Get-DownOSDBuilder -ContentDownload 'OneDriveSetup Production'
 
+Write-Host "Updating Windows 10 Home 10.019045.4472 to $OSDBuilderPath...." -ForegroundColor Cyan
 pause
 Update-OSMedia -Download -Execute
 pause
 
 Write-Host "Creating OSDBuild Task for: Windows 10 Home 10.019045.4472...." -ForegroundColor Cyan
-New-OSDBuildTask -TaskName "Windows 10 Home 22H2" -CustomName "Win 10 Home 22H2" -SaveAs Task -EnableNetFX3 
+New-OSBuildTask -TaskName "Windows 10 Home 22H2" -CustomName "Win 10 Home 22H2" -EnableNetFX3  -RemoveAppx -SaveAs Task 
 
 pause 
 
-Write-Host "Executing NEW OSDBuild Task for: Windows 10 Home 10.019045.4472...." -ForegroundColor Cyan
-New-OSDBuild -Download -Execute -CreateISO -ByTaskName "Windows 10 Home 22H2"  
+Write-Host "Executing NEW OSBuild Task for: Windows 10 Home 10.019045.4472...." -ForegroundColor Cyan
+New-OSBuild -Download -Execute -EnableNetFX -SelectUpdates
