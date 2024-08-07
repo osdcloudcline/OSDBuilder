@@ -13,7 +13,7 @@ Import-OSMedia -ImageIndex 1 -SkipGrid
 pause
 
 Write-Host "Downloading OS Updates, Feature Updates and Updating Windows 10 Home 10.019045.4472 to $OSDBuilderPath...." -ForegroundColor Cyan
-Get-DownOSDBuilder -Download -GridView -UpdateArch x64 -UpdateBuild 22H2 -UpdateOS "Windows 10 22H2"
+Get-DownOSDBuilder -Download -GridView -UpdateArch x64 -UpdateBuild 22H2 
 pause
 Get-DownOSDBuilder -ContentDownload 'OneDriveSetup Production'
 
