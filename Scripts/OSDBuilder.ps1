@@ -53,7 +53,7 @@ do
         }
   '5' { cls
         $Monthly = Invoke-WebRequest ("")
-        Invoke-Expression $($Windows10ProWorkstation.Content)
+        Invoke-Expression $($Monthly.Content)
         }
 '6'{exit}
     }
