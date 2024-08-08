@@ -6,6 +6,9 @@ Write-Host '   remove editions, remove built in apps,       '  -ForegroundColor 
 Write-Host '   add drivers, packages, scripts, extra files, '  -ForegroundColor DarkBlue  -BackgroundColor White
 Write-Host '   WinPE Powershell Mods & Start Menu layout    '  -ForegroundColor DarkBlue  -BackgroundColor White
 Write-Host '                                                '  -BackgroundColor White
+Write-Host '   OSDBuilder credit to David Segura            '  -ForegroundColor DarkBlue  -BackgroundColor White
+Write-Host '   https://osdbuilder.osdeploy.com/             '  -ForegroundColor DarkBlue  -BackgroundColor White
+Write-Host '                                                '  -BackgroundColor White
 Write-Host '   WARNING: OSDBuilder consumes a large amount  '  -ForegroundColor DarkRed  -BackgroundColor White
 Write-Host '   disk space during customization, so DO NOT   '  -ForegroundColor DarkRed  -BackgroundColor White
 Write-Host '   use your Windows OS Drive (C:\)              '  -ForegroundColor DarkRed  -BackgroundColor White
