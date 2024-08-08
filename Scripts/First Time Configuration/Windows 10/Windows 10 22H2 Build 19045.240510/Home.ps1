@@ -1,6 +1,3 @@
-
-
-
 $OSDBuilderPath = Read-Host -Prompt 'Please enter a path other than on Drive C: to use as a temporary working directory'
 Get-OSDBuilder -SetPath $OSDBuilderPath 
 pause
@@ -18,8 +15,6 @@ Write-Host "Importing Windows 10 Home 10.019045.4472 to $OSDBuilderPath...." -Fo
 Import-OSMedia -ImageIndex 1 -SkipGrid
 
 pause
-
-
 
 Write-Host "Updating Windows 10 Home 10.019045.4472 to $OSDBuilderPath...." -ForegroundColor Cyan
 pause
