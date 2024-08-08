@@ -7,15 +7,19 @@ pause
 Get-OSDBuilder -CreatePaths
 pause
 
+Write-Host "Downloading OS Updates, Feature Updates for Windows 10 Home 10.019045.4472 to $OSDBuilderPath...." -ForegroundColor Cyan
+Get-DownOSDBuilder -Download  -GridView -UpdateArch x64 -UpdateBuild 22H2 
+pause
+Get-DownOSDBuilder -ContentDownload 'OneDriveSetup Production'
+
+pause
+
 Write-Host "Importing Windows 10 Home 10.019045.4472 to $OSDBuilderPath...." -ForegroundColor Cyan
 Import-OSMedia -ImageIndex 1 -SkipGrid
 
 pause
 
-Write-Host "Downloading OS Updates, Feature Updates for Windows 10 Home 10.019045.4472 to $OSDBuilderPath...." -ForegroundColor Cyan
-Get-DownOSDBuilder -Download -FeatureUpdates -GridView -UpdateArch x64 -UpdateBuild 22H2 
-pause
-Get-DownOSDBuilder -ContentDownload 'OneDriveSetup Production'
+
 
 Write-Host "Updating Windows 10 Home 10.019045.4472 to $OSDBuilderPath...." -ForegroundColor Cyan
 pause
