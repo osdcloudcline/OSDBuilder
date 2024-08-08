@@ -28,4 +28,14 @@ New-OSBuildTask -TaskName "Windows 10 Home 22H2" -CustomName "Win 10 Home 22H2" 
 pause 
 
 Write-Host "Executing NEW OSBuild Task for: Windows 10 Home 10.019045.4472...." -ForegroundColor Cyan
-New-OSBuild -Download -Execute -EnableNetFX -SelectUpdates
+New-OSBuild -Download -Execute -EnableNetFX -ByTaskName "Windows 10 Home 22H2"
+
+
+pause
+
+Write-Host "Creating OS: Windows 10 Home 22H2 updated DVD ISO...."
+New-OSDBuilderISO
+
+pause
+
+Show-OSDBuilderInfo 
