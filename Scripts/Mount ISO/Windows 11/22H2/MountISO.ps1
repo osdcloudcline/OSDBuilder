@@ -18,6 +18,10 @@ Get-MountOS
 ElseIf($W1122H2 -eq $false){
 }
 
-
+Write-Host "Installing OSDBuilder Module..." -ForegroundColor Cyan
+Install-Module -Name OSDBuilder -Force -AllowClobber -SkipPublisherCheck
+Write-Host
+Write-Host "Importinmg OSDBuilder Module..." -ForegroundColor Cyan
+Import-Module -Name OSDBuilder -Force
 
 Stop-Transcript
