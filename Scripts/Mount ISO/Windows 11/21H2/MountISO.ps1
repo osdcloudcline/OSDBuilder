@@ -8,7 +8,7 @@ $ISOPath = "C:\ISOs\OS\Clients\Win11\21H2\22000.2960.240504-2041.CO_RELEASE_SVC_
 $ISODrive = Get-DiskImage -ImagePath $ISOPath
 $ISOLetter = ($ISODrive | Get-Volume).DriveLetter
 
-Mount-DiskImage -ImagePath $ISOPath
+Mount-DiskImage -ImagePath 
 $ISOLetter
 }
 Stop-Transcript
