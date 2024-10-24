@@ -1,3 +1,12 @@
+
+Function Show-MainMenu{
+   [CmdletBinding()]
+   param(
+   [string]$Title = 'OSD Builder -  Main Menu',
+   [string]$Question = 'What type of action do you need to do?' 
+   )
+cls
+
 Write-Host '                                                '  -BackgroundColor White
 Write-Host '   OSDBuilder is a tool that allows users to    '  -ForegroundColor DarkBlue  -BackgroundColor White
 Write-Host '   import both client & server operating system '  -ForegroundColor DarkBlue  -BackgroundColor White
@@ -13,16 +22,6 @@ Write-Host '   WARNING: OSDBuilder consumes a large amount  '  -ForegroundColor 
 Write-Host '   disk space during customization, so DO NOT   '  -ForegroundColor DarkRed  -BackgroundColor White
 Write-Host '   use your Windows OS Drive (C:\)              '  -ForegroundColor DarkRed  -BackgroundColor White
 Write-Host '                                                '  -BackgroundColor White
-
-
-Function Show-MainMenu{
-   [CmdletBinding()]
-   param(
-   [string]$Title = 'OSD Builder -  Main Menu',
-   [string]$Question = 'What type of action do you need to do?' 
-   )
-cls
-
 
        $os = Get-CimInstance -ClassName Win32_OperatingSystem
        $PCName = "$env:computername"
