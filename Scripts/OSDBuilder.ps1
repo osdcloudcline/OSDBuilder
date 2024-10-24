@@ -13,7 +13,7 @@ Write-Host '   WARNING: OSDBuilder consumes a large amount  '  -ForegroundColor 
 Write-Host '   disk space during customization, so DO NOT   '  -ForegroundColor DarkRed  -BackgroundColor White
 Write-Host '   use your Windows OS Drive (C:\)              '  -ForegroundColor DarkRed  -BackgroundColor White
 Write-Host '                                                '  -BackgroundColor White
-pause
+
 
 Function Show-MainMenu{
    [CmdletBinding()]
@@ -46,6 +46,8 @@ cls
        Write-Verbose "MS Edge Chromium Version: $EdgeBrowser" -Verbose 
        
 pause
+
+cls
 Write-Host "======= $Title ======"
 Write-Host " 1. First Time Configuration - Windows 10"
 Write-Host " 2. First Time Configuration - Windows 11"
