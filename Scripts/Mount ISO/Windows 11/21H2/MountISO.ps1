@@ -9,7 +9,7 @@ Get-MountOS
 ElseIf($W1121H2 -eq $false){
 $GetOS = Invoke-WebRequest("https://github.com/osdcloudcline/Scripts/raw/refs/heads/main/OS%20Downloads/Windows%2011/21H2/21H2.PS1")
 Invoke-Expression $($GetOS.Content)
-Get-MountOS
+
 }
 
 Write-Host "Installing OSDBuilder Module..." -ForegroundColor Cyan
