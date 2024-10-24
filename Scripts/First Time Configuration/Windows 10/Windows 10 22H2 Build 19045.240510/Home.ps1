@@ -1,8 +1,5 @@
-$OSDBuilderPath = Read-Host -Prompt 'Please enter a path other than on Drive C: to use as a temporary working directory'
-Get-OSDBuilder -SetPath $OSDBuilderPath 
-pause
-Get-OSDBuilder -CreatePaths
-pause
+$OSDBuilderPath = Invoke-WebRequest("https://github.com/osdcloudcline/OSDBuilder/raw/refs/heads/main/Scripts/First%20Time%20Configuration/OSDBuilder%20Configuration/Setup.ps1")
+Invoke-Expression $($OSDBuilderPath.Content)
 
 Write-Host "Downloading OS Updates, Feature Updates for Windows 10 Home 10.019045.4472 to $OSDBuilderPath...." -ForegroundColor Cyan
 Get-DownOSDBuilder -Download  -GridView -UpdateArch x64 -UpdateBuild 22H2 
