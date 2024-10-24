@@ -6,7 +6,7 @@ $ISOPath = Read-Host -Prompt 'Please provide path to DVD ISO'
 $ISODrive = Get-DiskImage -ImagePath $ISOPath
 $ISOLetter = ($ISODrive | Get-Volume).DriveLetter
 
-Mount-DiskImage -ImagePath $ISOPath 
+Mount-DiskImage -ImagePath $ISODrive
 $ISOLetter
 
 Stop-Transcript
