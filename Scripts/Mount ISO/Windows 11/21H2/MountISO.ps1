@@ -1,6 +1,7 @@
 $ISOLog = "C:\Logs\OSDBuilder\MountISO.log"
 
 Start-Transcript -Path $ISOLog
+
 Function Get-MountOS(){
 $ISOPath = "C:\ISOs\OS\Clients\Win11\21H2\22000.2960.240504-2041.CO_RELEASE_SVC_PROD1_CLIENTMULTI_X64FRE_EN-US.ISO"
 $ISODrive = Get-DiskImage -ImagePath $ISOPath
@@ -22,9 +23,8 @@ Invoke-Expression $($GetOS.Content)
 
 Write-Host "Installing OSDBuilder Module..." -ForegroundColor Cyan
 Install-Module -Name OSDBuilder -Force -AllowClobber -SkipPublisherCheck
-Set-ExecutionPolicy Unrestricted
 Write-Host
-Write-Host "Importinmg OSDBuilder Module..." 
+Write-Host "Importinmg OSDBuilder Module..." -ForegroundColor Cyan
 Import-Module -Name OSDBuilder -Force
 
 
