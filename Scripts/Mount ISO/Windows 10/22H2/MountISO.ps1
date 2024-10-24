@@ -11,9 +11,6 @@ Mount-DiskImage -ImagePath $ISOPath
 $ISOLetter
 }
 
-
-
-
 $W1022H2 = (Test-Path -Path "C:\ISOs\OS\Clients\Win10\22H2\19045.4472.240510-1751.22H2_RELEASE_SVC_PROD2_CLIENTMULTI_X64FRE_EN-US.iso" -IsValid)
 If($W1022H2 -eq $true){
 Get-MountOS
@@ -21,6 +18,10 @@ Get-MountOS
 ElseIf($W1022H2 -eq $false){
 }
 
-
+Write-Host "Installing OSDBuilder Module..." -ForegroundColor Cyan
+Install-Module -Name OSDBuilder -Force -AllowClobber -SkipPublisherCheck
+Write-Host
+Write-Host "Importinmg OSDBuilder Module..." -ForegroundColor Cyan
+Import-Module -Name OSDBuilder -Force
 
 Stop-Transcript
