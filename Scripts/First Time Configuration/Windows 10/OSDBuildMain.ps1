@@ -35,22 +35,31 @@ do
   '1'{  cls
         $OSDBuilderUpdate = Invoke-WebRequest("https://github.com/osdcloudcline/OSDBuilder/raw/main/PowerShell%20Module/Update.ps1")
         Invoke-Expression $($OSDBuilderUpdate.Content)
+        
         $Windows10Home = Invoke-WebRequest("https://github.com/osdcloudcline/OSDBuilder/raw/main/Scripts/First%20Time%20Configuration/Windows%2010/Windows%2010%2022H2%20Build%2019045.240510/Home.ps1")
         Invoke-Expression $($Windows10Home.Content)
       }
   '2' { cls
+        $OSDBuilderUpdate = Invoke-WebRequest("https://github.com/osdcloudcline/OSDBuilder/raw/main/PowerShell%20Module/Update.ps1")
+        Invoke-Expression $($OSDBuilderUpdate.Content)
         $Windows10Pro = Invoke-WebRequest ("https://github.com/osdcloudcline/Scripts/raw/main/Domain%20Administration/DomainAdminMain.ps1")
         Invoke-Expression $($Windows10Pro.Content)
         }
   '3' { cls
+        $OSDBuilderUpdate = Invoke-WebRequest("https://github.com/osdcloudcline/OSDBuilder/raw/main/PowerShell%20Module/Update.ps1")
+        Invoke-Expression $($OSDBuilderUpdate.Content)
         $Windows10Enterprise = Invoke-WebRequest ("https://github.com/osdcloudcline/Scripts/raw/main/Local%20Computer/LocalPCMain.ps1")
         Invoke-Expression $($Windows10Enterprise.Content)
         }
   '4' { cls
+        $OSDBuilderUpdate = Invoke-WebRequest("https://github.com/osdcloudcline/OSDBuilder/raw/main/PowerShell%20Module/Update.ps1")
+        Invoke-Expression $($OSDBuilderUpdate.Content)
         $Windows10EnterpriseVDI = Invoke-WebRequest ("https://github.com/osdcloudcline/Scripts/raw/main/WinGet%20/WinGetMain.ps1")
         Invoke-Expression $($Windows10EnterpriseVDI.Content)
         }
   '5' { cls
+        $OSDBuilderUpdate = Invoke-WebRequest("https://github.com/osdcloudcline/OSDBuilder/raw/main/PowerShell%20Module/Update.ps1")
+        Invoke-Expression $($OSDBuilderUpdate.Content)
         $Windows10ProWorkstation = Invoke-WebRequest ("https://github.com/osdcloudcline/Scripts/raw/main/OSD%20Cloud/OSDCloudMain.ps1")
         Invoke-Expression $($Windows10ProWorkstation.Content)
         }
