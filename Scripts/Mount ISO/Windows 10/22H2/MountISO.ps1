@@ -1,3 +1,13 @@
+Function Get-MountOS(){
+$ISOPath = "C:\ISOs\OS\Clients\Win11\21H2\22000.2960.240504-2041.CO_RELEASE_SVC_PROD1_CLIENTMULTI_X64FRE_EN-US.ISO"
+$ISODrive = Get-DiskImage -ImagePath $ISOPath
+$ISOLetter = ($ISODrive | Get-Volume).DriveLetter
+
+Mount-DiskImage -ImagePath $ISOPath
+$ISOLetter
+}
+
+
 $ISOLog = "C:\Logs\OSDBuilder\MountISO.log"
 
 Start-Transcript -Path $ISOLog
@@ -9,13 +19,6 @@ Get-MountOS
 ElseIf($W1022H2 -eq $false){
 }
 
-Function Get-MountOS(){
-$ISOPath = "C:\ISOs\OS\Clients\Win11\21H2\22000.2960.240504-2041.CO_RELEASE_SVC_PROD1_CLIENTMULTI_X64FRE_EN-US.ISO"
-$ISODrive = Get-DiskImage -ImagePath $ISOPath
-$ISOLetter = ($ISODrive | Get-Volume).DriveLetter
 
-Mount-DiskImage -ImagePath $ISOPath
-$ISOLetter
-}
 
 Stop-Transcript
