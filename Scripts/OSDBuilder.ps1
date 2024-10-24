@@ -61,7 +61,7 @@ do
   switch($selection)
   {
   '1'{  cls
-        $Windows10 = Invoke-WebRequest("https://github.com/osdcloudcline/OSDBuilder/raw/main/Scripts/First%20Time%20Configuration/Windows%2010/Windows%2010%2022H2%20Build%2019045.240510/Windows10-OSDBuild.ps1")
+        $Windows10 = Invoke-WebRequest("https://github.com/osdcloudcline/OSDBuilder/raw/refs/heads/main/Scripts/First%20Time%20Configuration/Windows%2010/OSDBuildMain.ps1")
         Invoke-Expression $($Windows10.Content)
       }
   '2' { cls
