@@ -1,6 +1,6 @@
 $ISOLog = "C:\Logs\OSDBuilder\MountISO.log"
 
-Start-Transcript
+Start-Transcript -Path $ISOLog
 
 $ISOPath = Read-Host -Prompt 'Please provide path to DVD ISO'
 $ISODrive = Get-DiskImage -ImagePath $ISOPath
