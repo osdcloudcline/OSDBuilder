@@ -22,17 +22,9 @@ pause
 Update-OSMedia -Download -Execute 
 pause
 
-Write-Host "Saving & Adding PowerShell Modules to the OSD Build..." -ForegroundColor Cyan
-$OSPoshModsDir = "$OSDBuilderPath\ContentPacks\_Global\OSPoshMods\ProgramFiles"
-$PEPoshModsDir =  "$OSDBuilderPath\ContentPacks\_Global\PEPoshMods\ProgramFiles"
 
-Save-Module -Name OSD -Path $OSPoshModsDir -Verbose
-Save-Module -Name OSD -Path $PEPoshModsDir -Verbose
-Save-Module -Name PackageManagement -Path $OSPoshModsDir -Verbose
-Save-Module -Name PackageManagement -Path $PEPoshModsDir -Verbose
-Save-Module -Name Pester -Path $OSPoshModsDir -Verbose
-Save-Module -Name PowerShellGet -Path $OSPoshModsDir -Verbose
-Save-Module -Name PowerShellGet -Path $PEPoshModsDir -Verbose
+
+
 
 Write-Host "Creating OSDBuild Task for: Windows 10 Home 10.019045.4472...." -ForegroundColor Cyan
 New-OSBuildTask -TaskName "Windows 10 Home 22H2" -CustomName "Win 10 Home 22H2" -EnableNetFX3  -RemoveAppx -SaveAs Task 
