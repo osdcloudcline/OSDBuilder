@@ -11,7 +11,7 @@ Save-Module -Name PowerShellGet -Path $OSPoshModsDir -Verbose
 Save-Module -Name PowerShellGet -Path $PEPoshModsDir -Verbose
 Save-Module -Name OSDCloudGUI -Path $OSPoshModsDir -Verbose
 Save-Module -Name OSDCloudGUI -Path $PEPoshModDir -Verbose
-Save-Module -Name OSDCloudAzure $OSPoshModsDir -Verbose
+Save-Module -Name OSDCloudAzure -Path $OSPoshModsDir -Verbose
 Save-Module -Name OSDCloudAzure -Path $PEPoshModDir -Verbose
 Save-Module -Name OSDUpdate -Path $OSPoshModsDir -Verbose
 Save-Module -Name OSDUpdate -Path $PEPoshModsDir -Verbose
@@ -23,12 +23,16 @@ Save-Module -Name OSDDeploy -Path $OSPoshModsDir -Verbose
 Save-Module -Name OSDDeploy -Path $PEPoshModsDir -Verbose
 Save-Module -Name OSDSoftware -Path $OSPoshModsDir -Verbose
 Save-Module -Name OSDSoftware -Path $PEPoshModDir -Verbose
-Save-Module -Name OSDCatalog $OSPoshModsDir -Verbose
+Save-Module -Name OSDCatalog -Path $OSPoshModsDir -Verbose
 Save-Module -Name OSDCatalog -Path $PEPoshModDir -Verbose
 Save-Module -Name OSDProgress -Path $OSPoshModsDir -Verbose
 Save-Module -Name OSDProgress -Path $PEPoshModDir -Verbose
-Save-Module -Name PSWindowsUpdate $OSPoshModsDir -Verbose
+Save-Module -Name PSWindowsUpdate -Path $OSPoshModsDir -Verbose
 Save-Module -Name PSWindowsUpdate -Path $PEPoshModDir -Verbose
+
+Save-Module -Name PSCloudPC -Path $OSPoshModsDir -Verbose
+Save-Module -Name PSCloudPC -Path $PEPoshModDir -Verbose
+
 
 Write-Host "Saving & Adding Azure-related PowerShell Modules to the OSD Build..." -ForegroundColor Cyan
 $OSPoshModsDir = "$OSDBuilderPath\ContentPacks\_Global\OSPoshMods\ProgramFiles"
