@@ -10,7 +10,7 @@ Import-OSMedia -ImageIndex 1 -SkipGrid
 
 pause
 
-$HomeUpdates = Invoke-WebRequest("https://github.com/osdcloudcline/OSDBuilder/raw/refs/heads/main/Scripts/First%20Time%20Configuration/Windows%2010/Windows%2010%2022H2%20Build%2019045.240510/Home/GetUpdates.ps1")
+$HomeUpdates = Invoke-WebRequest("https://github.com/osdcloudcline/OSDBuilder/raw/refs/heads/main/Scripts/First%20Time%20Configuration/Windows%2010/22H2/Home/GetUpdates.ps1")
 Invoke-Expression $($HomeUpdates.Content)
 
 $PSModules = Invoke-WebRequest("https://github.com/osdcloudcline/OSDBuilder/raw/refs/heads/main/PowerShell%20Module/AddModules.ps1")
