@@ -10,24 +10,24 @@ Import-OSMedia -ImageIndex 1 -SkipGrid
 
 pause
 
-Write-Host "Downloading OS Updates, Feature Updates for Windows 10 Home 10.019045.4472 to $OSDBuilderPath...." -ForegroundColor Cyan
+Write-Host "Downloading OS Updates, Feature Updates for Windows 10 Home 10.019045.5073.241016 to $OSDBuilderPath...." -ForegroundColor Cyan
 Get-DownOSDBuilder -Download  -GridView -UpdateArch x64 -UpdateBuild 22H2 
-pause
 Get-DownOSDBuilder -ContentDownload 'OneDriveSetup Production'
 
 pause
 
-Write-Host "Updating Windows 10 Home 10.019045.4472 to $OSDBuilderPath...." -ForegroundColor Cyan
-pause
+Write-Host "Updating Windows 10 Home 10.019045.5073.241016 to $OSDBuilderPath...." -ForegroundColor Cyan
+
 Update-OSMedia -Download -Execute 
 pause
+
 
 $PSModules = Invoke-WebRequest("https://github.com/osdcloudcline/OSDBuilder/raw/refs/heads/main/PowerShell%20Module/AddModules.ps1")
 Invoke-Expression $($PSModules.Content)
 
 
 
-Write-Host "Creating OSDBuild Task for: Windows 10 Home 10.019045.4472...." -ForegroundColor Cyan
+Write-Host "Creating OSDBuild Task for: Windows 10 Home 10.019045.5073.241016...." -ForegroundColor Cyan
 New-OSBuildTask -TaskName "Windows 10 Home 22H2" -CustomName "Win 10 Home 22H2" -EnableNetFX3  -RemoveAppx -SaveAs Task 
 
 pause 
