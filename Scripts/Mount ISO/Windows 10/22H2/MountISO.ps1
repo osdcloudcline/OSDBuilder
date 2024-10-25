@@ -16,6 +16,10 @@ If($W1022H2 -eq $true){
 Get-MountOS
 }
 ElseIf($W1022H2 -eq $false){
+$22H2 = InvokeWebRequest("https://github.com/osdcloudcline/Scripts/raw/refs/heads/main/OS%20Downloads/Windows%2010/22H2/22H2.ps1")
+Invoke-Expression $($22H2.Content)
+pause
+Get-MountOS
 }
 
 Write-Host "Installing OSDBuilder Module..." -ForegroundColor Cyan
