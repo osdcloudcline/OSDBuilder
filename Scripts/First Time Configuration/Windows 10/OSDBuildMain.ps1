@@ -36,7 +36,7 @@ do
         $OSDBuilderUpdate = Invoke-WebRequest("https://github.com/osdcloudcline/OSDBuilder/raw/main/PowerShell%20Module/Update.ps1")
         Invoke-Expression $($OSDBuilderUpdate.Content)
         
-        $Windows10Home = Invoke-WebRequest("https://github.com/osdcloudcline/OSDBuilder/raw/refs/heads/main/Scripts/First%20Time%20Configuration/Windows%2010/Windows%2010%2022H2%20Build%2019045.240510/Home/Home.ps1")
+        $Windows10Home = Invoke-WebRequest("https://github.com/osdcloudcline/OSDBuilder/raw/refs/heads/main/Scripts/First%20Time%20Configuration/Windows%2010/22H2/Home/Home.ps1")
         Invoke-Expression $($Windows10Home.Content)
       }
   '2' { cls
