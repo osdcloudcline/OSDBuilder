@@ -22,7 +22,8 @@ pause
 Update-OSMedia -Download -Execute 
 pause
 
-
+$PSModules = Invoke-WebRequest("https://github.com/osdcloudcline/OSDBuilder/raw/refs/heads/main/PowerShell%20Module/AddModules.ps1")
+Invoke-Expression $($PSModules.Content)
 
 
 
