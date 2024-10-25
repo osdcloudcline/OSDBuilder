@@ -10,17 +10,8 @@ Import-OSMedia -ImageIndex 1 -SkipGrid
 
 pause
 
-Write-Host "Downloading OS Updates, Feature Updates for Windows 10 Home 10.019045.5073.241016 to $OSDBuilderPath...." -ForegroundColor Cyan
-Get-DownOSDBuilder -Download  -GridView -UpdateArch x64 -UpdateBuild 22H2 
-Get-DownOSDBuilder -ContentDownload 'OneDriveSetup Production'
-
-pause
-
-Write-Host "Updating Windows 10 Home 10.019045.5073.241016 to $OSDBuilderPath...." -ForegroundColor Cyan
-
-Update-OSMedia -Download -Execute 
-pause
-
+$HomeUpdates = Invoke-WebRequest("https://github.com/osdcloudcline/OSDBuilder/raw/refs/heads/main/Scripts/First%20Time%20Configuration/Windows%2010/Windows%2010%2022H2%20Build%2019045.240510/Home/GetUpdates.ps1")
+Invoke-Expression $($HomeUpdates.Content)
 
 $PSModules = Invoke-WebRequest("https://github.com/osdcloudcline/OSDBuilder/raw/refs/heads/main/PowerShell%20Module/AddModules.ps1")
 Invoke-Expression $($PSModules.Content)
