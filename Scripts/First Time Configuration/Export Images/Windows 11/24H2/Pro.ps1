@@ -117,10 +117,22 @@ Write-Host
 $ISOFolder = Read-Host -Prompt ' Enter source, press Enter'
 $WimFolder = $ISOFolder
 
+$ISOPath = "C:\ISOs\OS\Clients\Win11\24H2\26100.2033.241003-1823.GE_RELEASE_SVC_PROD1_CLIENTMULTI_X64FRE_EN-US.ISO"
 
-
-    if (Test-Path $WimFolder\Sources\install.wim)
+    if (Test-Path $ISOPATH -eq $true)
         {
+         $ISOPath = "C:\ISOs\OS\Clients\Win11\24H2\26100.2033.241003-1823.GE_RELEASE_SVC_PROD1_CLIENTMULTI_X64FRE_EN-US.ISO"
+         $destination = "C:\ISOs\OS\Clients\Win11\24H2\test"
+         $MountDrive = Mount-DiskImage -ImagePath $ISOPath
+         $Drives = Get-CimInstance Win32_LogicalDisk | Where-Object -Property VolumeName -eq "CCSA_X64FRE_EN-US_DV9" 
+         $OSISO = ($Drives).DeviceID
+         Copy-Item -Path "$OSISO\*" -Destination $destination -Recurse
+         $sourceWIM = "C:\ISOs\OS\Clients\Win11\24H2\test\sources\install.wim"
+         $WimFile = Join-Path $destination '\Sources\install.wim'
+         Get-WindowsImage -ImagePath $WimFile | Format-Table ImageIndex, ImageName
+         $Index = Read-Host -Prompt ' Select edition'
+         Export-WindowsImage -SourceImagePath "C:\ISOs\OS\Clients\Win11\24H2\test\sources\install.wim" -SourceIndex $Index -DestinationImagePath $WIMDestination  -DestinationName 'Windows 11 Professional 24H2'
+         
         $WimCount = 1
             if (($WIMFolder -match "x86") -or ($WIMFolder -match "x64"))
             {
@@ -149,7 +161,7 @@ $WimFolder = $ISOFolder
         }
     }
 
-$WimFile = Join-Path $WimFolder '\Sources\install.wim'
+$WimFile = Join-Path $destination '\Sources\install.wim'
 
 ##########################################################
 # List Windows editions on image, prompt user for
