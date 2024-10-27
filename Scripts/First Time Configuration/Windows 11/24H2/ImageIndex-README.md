@@ -1,9 +1,9 @@
 
 # Windows 11 24H2 ISO Image Index
 
-# Index 1: Windows 11 Home
-# Index 2: Windows 11 Home N
-# Index 3: Windows 11 Pro
+### Index 1: Windows 11 Home
+### Index 2: Windows 11 Home N
+### Index 3: Windows 11 Pro
 # Index 4: Windows 11 Pro N
 # Index 5: Windows 11 Home Single Language
 # Index 6: Windows 11 Enterprise
