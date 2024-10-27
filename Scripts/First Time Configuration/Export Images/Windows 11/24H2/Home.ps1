@@ -1,2 +1,4 @@
-$MountedISODrive = 
-$ExtractionDir = Read-Host -Prompt 'Please provide extraction directory'
+$ISODrive = Get-DiskImage -ImagePath $ISOPath
+$ISOLetter = ($ISODrive | Get-Volume).DriveLetter
+
+Export-WindowsImage -SourceImagePath "$ISODrive\sources\install.wim" -SourceIndex 1 -DestinationName "Windows 11 Home 24H2" -DestinationImagePath "C:\ISOs\OS\Clients\Win11\24H2\WIM Files\Home-24H2.wim"
