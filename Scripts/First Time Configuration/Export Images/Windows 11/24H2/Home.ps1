@@ -12,7 +12,7 @@ $WIMFile = "install.wim"
 
 Join-Path $MountedISO $WIMFile
 
-$FullWIM = New-Tem -ItemType File (Join-Path $MountedISO $WIMFile)
+$FullWIM = New-Item -ItemType File (Join-Path $MountedISO $WIMFile)
 
 Export-WindowsImage -SourceImagePath "$FullWIM" -SourceIndex 1 -DestinationName "Windows 11 Home 24H2" -DestinationImagePath "C:\ISOs\OS\Clients\Win11\24H2\WIM Files\Home-24H2.wim"
 
