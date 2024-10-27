@@ -8,7 +8,10 @@ Mount-DiskImage -ImagePath $ISOPath
 
 $MountedISO = Read-Host -Prompt 'Please provide path to mounted ISO and include the sources folder'
 
-Export-WindowsImage -SourceImagePath "$MountedISO\install.wim" -SourceIndex 1 -DestinationName "Windows 11 Home 24H2" -DestinationImagePath "C:\ISOs\OS\Clients\Win11\24H2\WIM Files\Home-24H2.wim"
+$WIMFile = "install.wim"
+
+$FullWIM = Join-Path $MountedISO $WIMFile
+Export-WindowsImage -SourceImagePath "$FullWIM" -SourceIndex 1 -DestinationName "Windows 11 Home 24H2" -DestinationImagePath "C:\ISOs\OS\Clients\Win11\24H2\WIM Files\Home-24H2.wim"
 
 pause
 
