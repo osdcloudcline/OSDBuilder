@@ -1,3 +1,4 @@
+$ISOPath = ""
 $ISODrive = Get-DiskImage -ImagePath $ISOPath
 $ISOLetter = ($ISODrive | Get-Volume).DriveLetter
 
