@@ -7,4 +7,4 @@
  Copy-Item -Path "$OSISO\*" -Destination $destination -Recurse
  $sourceWIM = "C:\ISOs\OS\Clients\Win11\24H2\sources\install.wim"
  Export-WindowsImage -SourceImagePath "C:\ISOs\OS\Clients\Win11\24H2\sources\install.wim" -SourceIndex 3  -DestinationName 'Windows 11 Professional 24H2' -DestinationImagePath $WIMDestination
- $DismountDrive = Dismount-DiskImage -ImagePath $OSISO      
+ $DismountDrive = Dismount-DiskImage -DevicePath \\.\CDROM1
