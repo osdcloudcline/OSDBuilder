@@ -13,16 +13,20 @@ Invoke-Expression $($ConfigureOSDBuilder.Content)
 
 }
 
-$ManualTask = Read-Host -Prompt 'Do you want to inject drivers, updates, or indivual files?'
-ElseIf(($CustomizeOS -eq "manual") -or ($CustomizeOS -eq "Manual") -or ($CustomizeOS -eq "m") -or ($CustomizeOS -eq "M") -and ($ManualTask -eq "updates") -or ($ManualTask -eq "Updates")){
-
-
-
-}
-ElseIf(($CustomizeOS -eq "manual") -or ($CustomizeOS -eq "Manual") -or ($CustomizeOS -eq "m") -or ($CustomizeOS -eq "M") -and($ManualTask -eq "drivers") -or ($ManualTask -eq "Drivers")){
+ElseIf(($CustomizeOS -eq "manual") -or ($CustomizeOS -eq "Manual") -or ($CustomizeOS -eq "m") -or ($CustomizeOS -eq "M")){
+$ManualMenu = Invoke-WebRequest("")
+Invoke-Expression $($ManualMenu.Content)
 
 
 }
-ElseIf(($CustomizeOS -eq "manual") -or ($CustomizeOS -eq "Manual") -or ($CustomizeOS -eq "m") -or ($CustomizeOS -eq "M") -and ($ManualTask -eq "files") -or ($MaunalTask -eq "Files")){
+ElseIf(($CustomizeOS -eq "manual") -or ($CustomizeOS -eq "Manual") -or ($CustomizeOS -eq "m") -or ($CustomizeOS -eq "M")){
+$ManualMenu = Invoke-WebRequest("")
+Invoke-Expression $($ManualMenu.Content)
+
+}
+ElseIf(($CustomizeOS -eq "manual") -or ($CustomizeOS -eq "Manual") -or ($CustomizeOS -eq "m") -or ($CustomizeOS -eq "M")){
+$ManualMenu = Invoke-WebRequest("")
+Invoke-Expression $($ManualMenu.Content)
+
 
 }
