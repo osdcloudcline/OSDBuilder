@@ -19,3 +19,27 @@
  Export-WindowsImage -SourceImagePath "C:\ISOs\OS\Clients\Win11\24H2\sources\install.wim" -SourceIndex 3  -DestinationName 'Windows 11 Professional 24H2' -DestinationImagePath $WIMDestination
  $DismountDrive = Dismount-DiskImage -DevicePath \\.\CDROM1
  }
+
+#######    Delete Items Variables region ########################
+
+$bootfolder = "$destination\boot"
+$EFIfolder = "$destination\efi"
+$Sourcesfolder = "$destination\sources"
+$supportfolder = "$destination\support"
+
+#####################################################
+
+Write-Host "Deleting Subfolders and Files Windows 11 24H2 Source Directory..." -ForegroundColor Cyan 
+
+rd -Path "$bootfolder" -Recurse -Force
+rd -Path "$EFIfolder" -Recurse -Force
+rd -Path "$Sourcesfolder" -Recurse -Force
+rd -Path "$supportfolder" -Recurse -Force
+
+Remove-Item -Path "$destination\*.inf" -Recurse -Force
+Remove-Item -Path "$destination\*.efi" -Recurse -Force
+Remove-Item -Path "$destination\*.exe" -Recurse -Force
+Remove-Item -Path "$destination\bootmgr" -Recurse -Force
+
+
+Write-Host "Excess Files and folders have been successfully deleted..." -ForegroundColor Green 
