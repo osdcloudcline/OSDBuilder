@@ -10,7 +10,7 @@
  If($WIMDirTest -eq $true){
  Copy-Item -Path "$OSISO\*" -Destination $destination -Recurse
  $sourceWIM = "C:\ISOs\OS\Clients\Win11\24H2\sources\install.wim"
- Export-WindowsImage -SourceImagePath "C:\ISOs\OS\Clients\Win11\24H2\sources\install.wim" -SourceIndex 3  -DestinationName 'Windows 11 Home 24H2' -DestinationImagePath $WIMDestination
+ Export-WindowsImage -SourceImagePath "C:\ISOs\OS\Clients\Win11\24H2\sources\install.wim" -SourceIndex 1  -DestinationName 'Windows 11 Home 24H2' -DestinationImagePath $WIMDestination
  }
  ElseIf($WIMDirTest -eq $false){
  New-Item -Path "C:\ISOs\OS\Clients\Win11\24H2\WIM" -ItemType Directory -Force
