@@ -14,21 +14,15 @@ $ConfigureOSDBuilder = Invoke-WebRequest("https://github.com/osdcloudcline/OSDBu
 Invoke-Expression $($ConfigureOSDBuilder.Content)
 
 }
-
 ElseIf(($CustomizeOS -eq "manual") -or ($CustomizeOS -eq "Manual") -or ($CustomizeOS -eq "m") -or ($CustomizeOS -eq "M")){
-$ManualMenu = Invoke-WebRequest("")
+$ManualMenu = Invoke-WebRequest("https://github.com/osdcloudcline/OSDBuilder/raw/refs/heads/main/Scripts/Manual/MainMenu.ps1")
 Invoke-Expression $($ManualMenu.Content)
-
-
 }
 ElseIf(($CustomizeOS -eq "manual") -or ($CustomizeOS -eq "Manual") -or ($CustomizeOS -eq "m") -or ($CustomizeOS -eq "M")){
-$ManualMenu = Invoke-WebRequest("")
+$ManualMenu = Invoke-WebRequest("https://github.com/osdcloudcline/OSDBuilder/raw/refs/heads/main/Scripts/Manual/MainMenu.ps1")
 Invoke-Expression $($ManualMenu.Content)
-
 }
 ElseIf(($CustomizeOS -eq "manual") -or ($CustomizeOS -eq "Manual") -or ($CustomizeOS -eq "m") -or ($CustomizeOS -eq "M")){
-$ManualMenu = Invoke-WebRequest("")
+$ManualMenu = Invoke-WebRequest("https://github.com/osdcloudcline/OSDBuilder/raw/refs/heads/main/Scripts/Manual/MainMenu.ps1")
 Invoke-Expression $($ManualMenu.Content)
-
-
 }
