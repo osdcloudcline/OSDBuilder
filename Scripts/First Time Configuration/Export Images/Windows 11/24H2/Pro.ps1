@@ -1,6 +1,6 @@
  $ISOPath = "C:\ISOs\OS\Clients\Win11\24H2\26100.2033.241003-1823.GE_RELEASE_SVC_PROD1_CLIENTMULTI_X64FRE_EN-US.ISO"
  $MountDrive = Mount-DiskImage -ImagePath $ISOPath
- $destination = Read-Host -Prompt 'Please enter destination path'
+ $destination = "C:\ISOs\OS\Clients\Win11\24H2"
  $WIMDestination = "$destination\Windows11Pro-24H2.wim"
  $Drives = Get-CimInstance Win32_LogicalDisk | Where-Object -Property VolumeName -eq "CCSA_X64FRE_EN-US_DV9" 
  $OSISO = ($Drives).DeviceID
