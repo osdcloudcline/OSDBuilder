@@ -1,5 +1,5 @@
 
-$ISOPath = "C:\ISOs\OS\Clients\Win11\24H2\26100.2033.241003-1823.GE_RELEASE_SVC_PROD1_CLIENTMULTI_X64FRE_EN-US.ISO"
+ $ISOPath = "C:\ISOs\OS\Clients\Win11\24H2\26100.2033.241003-1823.GE_RELEASE_SVC_PROD1_CLIENTMULTI_X64FRE_EN-US.ISO"
  $MountDrive = Mount-DiskImage -ImagePath $ISOPath
  $destination = "C:\ISOs\OS\Clients\Win11\24H2"
  $WIMDestination = "$destination\Windows11Home-24H2.wim"
