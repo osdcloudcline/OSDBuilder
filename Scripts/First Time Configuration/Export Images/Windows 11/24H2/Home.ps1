@@ -1,21 +1,46 @@
 
 $ISOPath = "C:\ISOs\OS\Clients\Win11\24H2\26100.2033.241003-1823.GE_RELEASE_SVC_PROD1_CLIENTMULTI_X64FRE_EN-US.ISO"
-$ISODrive = Get-DiskImage -ImagePath $ISOPath
-$ISOLetter = ($ISODrive | Get-Volume).DriveLetter
+ $MountDrive = Mount-DiskImage -ImagePath $ISOPath
+ $destination = "C:\ISOs\OS\Clients\Win11\24H2"
+ $WIMDestination = "$destination\Windows11Home-24H2.wim"
+ $Drives = Get-CimInstance Win32_LogicalDisk | Where-Object -Property VolumeName -eq "CCSA_X64FRE_EN-US_DV9" 
+ $OSISO = ($Drives).DeviceID
+ $WIMDir = "C:\ISOs\OS\Clients\Win11\24H2\WIM"
+ $WIMDirTest = Test-Path -Path "C:\ISOs\OS\Clients\Win11\24H2\WIM" -IsValid
+ If($WIMDirTest -eq $true){
+ Copy-Item -Path "$OSISO\*" -Destination $destination -Recurse
+ $sourceWIM = "C:\ISOs\OS\Clients\Win11\24H2\sources\install.wim"
+ Export-WindowsImage -SourceImagePath "C:\ISOs\OS\Clients\Win11\24H2\sources\install.wim" -SourceIndex 3  -DestinationName 'Windows 11 Home 24H2' -DestinationImagePath $WIMDestination
+ }
+ ElseIf($WIMDirTest -eq $false){
+ New-Item -Path "C:\ISOs\OS\Clients\Win11\24H2\WIM" -ItemType Directory -Force
+ Copy-Item -Path "$OSISO\*" -Destination $destination -Recurse
+ $sourceWIM = "C:\ISOs\OS\Clients\Win11\24H2\sources\install.wim"
+ Export-WindowsImage -SourceImagePath "C:\ISOs\OS\Clients\Win11\24H2\sources\install.wim" -SourceIndex 1  -DestinationName 'Windows 11 Home 24H2' -DestinationImagePath $WIMDestination
+ }
+
+#######    Delete Items Variables region ########################
+
+$bootfolder = "$destination\boot"
+$EFIfolder = "$destination\efi"
+$Sourcesfolder = "$destination\sources"
+$supportfolder = "$destination\support"
+
+#####################################################
+
+Write-Host "Deleting Subfolders and Files Windows 11 24H2 Source Directory..." -ForegroundColor Cyan 
+
+rd -Path "$bootfolder" -Recurse -Force
+rd -Path "$EFIfolder" -Recurse -Force
+rd -Path "$Sourcesfolder" -Recurse -Force
+rd -Path "$supportfolder" -Recurse -Force
+
+Remove-Item -Path "$destination\*.inf" -Recurse -Force
+Remove-Item -Path "$destination\*.efi" -Recurse -Force
+Remove-Item -Path "$destination\*.exe" -Recurse -Force
+Remove-Item -Path "$destination\bootmgr" -Recurse -Force
 
 
-Mount-DiskImage -ImagePath $ISOPath 
+Write-Host "Excess Files and folders have been successfully deleted..." -ForegroundColor Green 
 
-$MountedISO = Read-Host -Prompt 'Please provide path to mounted ISO and include the sources folder'
-
-$WIMFile = "install.wim"
-
-Join-Path $MountedISO $WIMFile
-
-$FullWIM = New-Item -ItemType File (Join-Path $MountedISO $WIMFile)
-
-Export-WindowsImage -SourceImagePath "$FullWIM" -SourceIndex 1 -DestinationName "Windows 11 Home 24H2" -DestinationImagePath "C:\ISOs\OS\Clients\Win11\24H2\WIM Files\Home-24H2.wim"
-
-pause
-
-Dismount-DiskImage -ImagePath $ISOLetter
+Dismount-DiskImage -DevicePath \\.\CDROM1
