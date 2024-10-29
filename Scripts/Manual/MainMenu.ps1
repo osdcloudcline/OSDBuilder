@@ -134,7 +134,7 @@ do
         Invoke-Expression $($EnterpriseVDI22H2.Content)
         }
         ElseIf(($Windows11 -eq "EnterpriseVDI") -or ($Windows11 -eq "enterprisevdi") -and ($W11Ver -eq "23H2")){
-        $EnterpriseVDI23H2 = Invoke-WebRequest("")
+        $EnterpriseVDI23H2 = Invoke-WebRequest("https://github.com/osdcloudcline/OSDBuilder/raw/refs/heads/main/Scripts/Manual/Windows%2011/23H2/EnterpriseVDI.ps1")
         Invoke-Expression $($EnterpriseVDI23H2.Content)
         }
         ElseIf(($Windows11 -eq "EnterpriseVDI") -or ($Windows11 -eq "enterprisevdi") -and ($W11Ver -eq "24H2")){
