@@ -63,7 +63,7 @@ do
         }
         
         ElseIf(($Windows11 -eq "Pro") -or ($Windows11 -eq "pro") -and ($W11Ver -eq "21H2")){
-        $Pro21H2 = Invoke-WebRequest("")
+        $Pro21H2 = Invoke-WebRequest("https://github.com/osdcloudcline/OSDBuilder/raw/refs/heads/main/Scripts/Manual/Windows%2011/21H2/Pro.ps1")
         Invoke-Expression $($Pro21H2.Content)
         }
         ElseIf(($Windows11 -eq "Pro") -or ($Windows11 -eq "pro") -and ($W11Ver -eq "22H2")){
