@@ -2,6 +2,7 @@ Install-Module -Name MSCatalog -Force -AllowClobber -SkipPublisherCheck
 Import-Module -Name MSCatalog -Force
 Update-Module -Name MSCatalog -FOrce 
 
+$22H2Updates = New-Object System.Collections.ArrayList
 $22H2Updates = @(
 3cbf01aa-02f7-4b95-891f-9e51e94a16ab,
 a9787757-bf1e-4d21-8114-464fd65ea313,
