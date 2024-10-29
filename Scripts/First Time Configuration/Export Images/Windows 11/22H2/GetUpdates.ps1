@@ -6,4 +6,4 @@ $Updates = Get-MSCatalogUpdate -Search "Windows 11 Version 22H2 for x64"
 
 $Destination = Read-Host -Prompt 'Please provide destination directory to save update'
 New-Item -Path $Destination -ItemType Directory
-Save-MSCatalogUpdate -Update $Update -Destination $Destination
+Save-MSCatalogUpdate -Update $Updates -Destination $Destination
