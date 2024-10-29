@@ -42,7 +42,7 @@ do
         $Windows11 = Read-Host - Prompt 'What SKU do you need to modify? (Home, Pro, ProWorkstations, Enterprise, EnterpriseVDI)'
         $W11Ver = Read-Host -Prompt 'What version do you want to modify? (21H2, 22H2, 23H2, 24H2 or 25H2)'
         If(($Windows11 -eq "Home") -or ($Windows11 -eq "home") -and ($W11Ver -eq "21H2")){
-        $Home21H2 = Invoke-WebRequest("")
+        $Home21H2 = Invoke-WebRequest("https://github.com/osdcloudcline/OSDBuilder/raw/refs/heads/main/Scripts/Manual/Windows%2011/21H2/Home.ps1")
         Invoke-Expression $($Home21H2.Content)
         }
         ElseIf(($Windows11 -eq "Home") -or ($Windows11 -eq "home") -and ($W11Ver -eq "22H2")){
