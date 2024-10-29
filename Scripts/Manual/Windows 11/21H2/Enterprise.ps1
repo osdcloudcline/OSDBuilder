@@ -3,3 +3,6 @@ Invoke-Expression $($MountISO.Content)
 
 $ExportOS = Invoke-WebRequest("https://github.com/osdcloudcline/OSDBuilder/raw/refs/heads/main/Scripts/First%20Time%20Configuration/Export%20Images/Windows%2011/21H2/Enterprise/ExtractWIM.ps1")
 Invoke-Expression $($ExportOS.Content)
+
+$MountWIM = Invoke-WebRequest("https://github.com/osdcloudcline/OSDBuilder/raw/refs/heads/main/Scripts/First%20Time%20Configuration/Export%20Images/Windows%2011/21H2/Enterprise/MountWIM.ps1")
+Invoke-Expression $($MountWIM.Content)
