@@ -130,3 +130,14 @@ Write-Host "Saving & Adding Utilities-related PowerShell Modules to the OSD Buil
 $OSPoshModsDir = "$OSDBuilderPath\ContentPacks\_Global\OSPoshMods\ProgramFiles"
 
 Save-Module -Name 7Zip4Powershell -Path $OSPoshModsDir -Verbose
+
+Write-Host "Copying OS & PE PowerShell Modules to be available for Custom Images..." -ForegroundColor Cyan
+$OSPoshModsDir = "$OSDBuilderPath\ContentPacks\_Global\OSPoshMods\ProgramFiles"
+$PEPoshModsDir =  "$OSDBuilderPath\ContentPacks\_Global\PEPoshMods\ProgramFiles"
+$OSPSModsDestination = Read-Host -Prompt 'Where do you want to copy the OS PowerShell Modules to?'
+$PEPSModsDestination = Read-Host -Prompt 'Where do you want to copy the Windows PE PowerShell Modules to?'
+New-Item -Path $OSPEModsDestination -ItemType Directory
+New-Item -Path $PEPSModsDestination -ItemType Directory
+Copy-Item -Path $OSPoshModsDir -Destination $OSPSModsDestination -Recurse 
+Copy-Item -Path $PEPoshModsDir -Destination $PEPSModsDestination -Recurse 
+
