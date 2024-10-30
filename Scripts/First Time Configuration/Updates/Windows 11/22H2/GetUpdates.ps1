@@ -100,7 +100,7 @@ $22H2MayUpdates = @(
 "60a82168-d2e3-40cb-95ff-60044c4d9ed5",
 "999973fa-54f0-4c48-9fea-5885a57b2d9a",
 "75530cdd-a62c-4855-89e7-a0a2554300f5",
-"aed741b6-7c40-46b3-8960-e2491c116c5e",
+"aed741b6-7c40-46b3-8960-e2491c116c5e"
 )
 
 $22H2AprilUpdates = New-Object System.Collections.ArrayList
@@ -141,7 +141,7 @@ $22H2JanuaryUpdates = @(
 "b4b978d5-c0fa-4ebf-b81a-48901af4266e",
 "437692b3-6c3d-42c1-b75a-58e335346b35",
 "321ac36f-3e47-4b8b-a478-f3b4e2acb0e9",
-"16fe8db4-a1dd-4e7a-9c12-d0a938afbcd6",
+"16fe8db4-a1dd-4e7a-9c12-d0a938afbcd6"
 )
 
 $PowerShellUpdates = New-Object System.Collections.ArrayList
