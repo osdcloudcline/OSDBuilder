@@ -26,4 +26,4 @@ $WACUpdates = Get-MSCatalogUpdate -Search "Windows Admin Center" -AllPages
 $WACUpdates | Select-Object Title, Guid | Out-File "E:\Updates\Windows11-22H2-WindowsAdminCentert.txt"
 
 $AVUpdates = Get-MSCatalogUpdate -Search "Defender Malicious Software" -AllPages
-$AVUpdates | Select-Object Title, Guid | Out-File "E:\Updates\Windows11-22H2-NET7Client.txt"
+$AVUpdates | Select-Object Title, Guid | Out-File "E:\Updates\Windows11-22H2-AV.txt"
