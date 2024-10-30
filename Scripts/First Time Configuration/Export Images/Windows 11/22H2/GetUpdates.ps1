@@ -111,4 +111,4 @@ $22H2Updates = @(
 
 $Destination = E:\Updates
 New-Item -Path $Destination -ItemType Directory
-Save-MSCatalogUpdate -Guid $22H2Updates -Destination "E:\Updates"  -Language "en-us" -Verbose 
+Save-MSCatalogUpdate -Guid $22H2Updates -Destination "E:\Updates"  -Language "en-us" -UseBits -Verbose
