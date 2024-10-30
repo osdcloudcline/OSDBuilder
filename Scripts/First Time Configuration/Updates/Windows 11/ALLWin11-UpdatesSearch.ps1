@@ -30,7 +30,7 @@ $NET5Updates | Select-Object Title, Guid | Out-File "E:\Updates\Windows11-21H2-N
 
 Write-Host
 Write-Host "Retriving Windows 11 21H2 Microsoft Edge Updates..." -ForegroundColor Cyan
-$MSEdgeUpdates = Get-MSCatalogUpdate -Search "Edge" -AllPages
+$MSEdgeUpdates = Get-MSCatalogUpdate -Search "Edge" 
 $MSEdgeUpdates | Select-Object Title, Guid | Out-File "E:\Updates\Windows11-21H2-Edge.txt"
 
 Write-Host
@@ -81,7 +81,7 @@ $NET5Updates | Select-Object Title, Guid | Out-File "E:\Updates\Windows11-22H2-N
 
 Write-Host
 Write-Host "Retriving Windows 11 22H2 Microsoft Edge Updates..." -ForegroundColor Cyan
-$MSEdgeUpdates = Get-MSCatalogUpdate -Search "Edge" -AllPages
+$MSEdgeUpdates = Get-MSCatalogUpdate -Search "Edge" 
 $MSEdgeUpdates | Select-Object Title, Guid | Out-File "E:\Updates\Windows11-22H2-Edge.txt"
 
 Write-Host
@@ -132,7 +132,7 @@ $NET5Updates | Select-Object Title, Guid | Out-File "E:\Updates\Windows11-23H2-N
 
 Write-Host
 Write-Host "Retriving Windows 11 23H2 Microsoft Edge Updates..." -ForegroundColor Cyan
-$MSEdgeUpdates = Get-MSCatalogUpdate -Search "Edge" -AllPages
+$MSEdgeUpdates = Get-MSCatalogUpdate -Search "Edge" 
 $MSEdgeUpdates | Select-Object Title, Guid | Out-File "E:\Updates\Windows11-23H2-Edge.txt"
 
 Write-Host
@@ -183,7 +183,7 @@ $NET5Updates | Select-Object Title, Guid | Out-File "E:\Updates\Windows11-24H2-N
 
 Write-Host
 Write-Host "Retriving Windows 11 24H2 Microsoft Edge Updates..." -ForegroundColor Cyan
-$MSEdgeUpdates = Get-MSCatalogUpdate -Search "Edge" -AllPages
+$MSEdgeUpdates = Get-MSCatalogUpdate -Search "Edge" 
 $MSEdgeUpdates | Select-Object Title, Guid | Out-File "E:\Updates\Windows11-24H2-Edge.txt"
 
 Write-Host
@@ -234,7 +234,7 @@ $NET5Updates | Select-Object Title, Guid | Out-File "E:\Updates\Windows11-25H2-N
 
 Write-Host
 Write-Host "Retriving Windows 11 25H2 Microsoft Edge Updates..." -ForegroundColor Cyan
-$MSEdgeUpdates = Get-MSCatalogUpdate -Search "Edge" -AllPages
+$MSEdgeUpdates = Get-MSCatalogUpdate -Search "Edge" 
 $MSEdgeUpdates | Select-Object Title, Guid | Out-File "E:\Updates\Windows11-25H2-Edge.txt"
 
 Write-Host
