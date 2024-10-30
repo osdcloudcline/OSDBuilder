@@ -109,6 +109,6 @@ $22H2Updates = @(
 )
 
 
-$Destination = Read-Host -Prompt 'Please provide destination directory to save update'
+$Destination = E:\Updates
 New-Item -Path $Destination -ItemType Directory
-Save-MSCatalogUpdate -Update $22H2Updates -Destination $Destination  -Language "en-us" -Verbose 
+Save-MSCatalogUpdate -Guid $22H2Updates -Destination "E:\Updates"  -Language "en-us" -Verbose 
