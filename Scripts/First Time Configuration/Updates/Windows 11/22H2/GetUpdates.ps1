@@ -166,83 +166,114 @@ $WindowsAVUpdates = @(
 "e61af560-0900-41c3-bc6a-f7273fed819d"
 )
 
-
+Write-Host "Creating download directories..." -ForegroundColor Green
 $DecemberDestination = "E:\Updates\December"
-New-Item -Path $Destination -ItemType Directory
+New-Item -Path $DecemberDestination -ItemType Directory
+
+$NovemberDestination = "E:\Updates\November"
+New-Item -Path $NovemberDestination -ItemType Directory
+
+$OctoberDestination = "E:\Updates\October"
+New-Item -Path $OctoberDestination -ItemType Directory
+
+$SeptemberDestination = "E:\Updates\September"
+New-Item -Path $SeptemberDestination -ItemType Directory
+
+$AugustDestination = "E:\Updates\August"
+New-Item -Path $AugustDestination -ItemType Directory
+
+$JulyDestination = "E:\Updates\July"
+New-Item -Path $JulyDestination -ItemType Directory
+
+$JuneDestination = "E:\Updates\June"
+New-Item -Path $JuneDestination -ItemType Directory
+
+$MayDestination = "E:\Updates\May"
+New-Item -Path $MayDestination -ItemType Directory
+
+$AprilDestination = "E:\Updates\April"
+New-Item -Path $AprilDestination -ItemType Directory
+
+$MarchDestination = "E:\Updates\March"
+New-Item -Path $MarchDestination -ItemType Directory
+
+$FebruaryDestination = "E:\Updates\February"
+New-Item -Path $FebruaryDestination -ItemType Directory
+
+$JanuaryDestination = "E:\Updates\January"
+New-Item -Path $JanuaryDestination -ItemType Directory
+
+$PowerShellDestination = "E:\Updates\PowerShell"
+New-Item -Path $PowerShellDestination -ItemType Directory
+
+$MSEdgeDestination = "E:\Updates\MSEdge"
+New-Item -Path $MSEdgeDestination -ItemType Directory
+
+$WindowsAdminCenterDestination = "E:\Updates\WindowsAdminCenter"
+New-Item -Path $WindowsAdminCenterDestination -ItemType Directory
+
+$WindowsAVDestination = "E:\Updates\WindowsAV"
+New-Item -Path $WindowsAVDestination -ItemType Directory
+Write-Host "Directories created..." -ForegroundColor Cyan 
+
 Write-Host "Downloading Windows 11 22H2 December Updates..." -ForegroundColor Cyan 
 Save-MSCatalogUpdate -Guid $22H2DecemberUpdates -Destination "E:\Updates\December"  -Language "en-us" -UseBits -Verbose
 
-$NovemberDestination = "E:\Updates\November"
-New-Item -Path $Destination -ItemType Directory
 Write-Host "Downloading Windows 11 22H2 November Updates..." -ForegroundColor Cyan 
 Save-MSCatalogUpdate -Guid $22H2NovemberUpdates -Destination "E:\Updates\November"  -Language "en-us" -UseBits -Verbose
 
-$OctoberDestination = "E:\Updates\October"
-New-Item -Path $Destination -ItemType Directory
+
 Write-Host "Downloading Windows 11 22H2 October Updates..." -ForegroundColor Cyan 
 Save-MSCatalogUpdate -Guid $22H2OctoberUpdates -Destination "E:\Updates\October"  -Language "en-us" -UseBits -Verbose
 
-$SeptemberDestination = "E:\Updates\September"
-New-Item -Path $Destination -ItemType Directory
+
 Write-Host "Downloading Windows 11 22H2 September Updates..." -ForegroundColor Cyan 
 Save-MSCatalogUpdate -Guid $22H2SeptemberUpdates -Destination "E:\Updates\September"  -Language "en-us" -UseBits -Verbose
 
-$AugustDestination = "E:\Updates\August"
-New-Item -Path $Destination -ItemType Directory
+
 Write-Host "Downloading Windows 11 22H2 August Updates..." -ForegroundColor Cyan 
 Save-MSCatalogUpdate -Guid $22H2AugustUpdates -Destination "E:\Updates\August"  -Language "en-us" -UseBits -Verbose
 
-$JulyDestination = "E:\Updates\July"
-New-Item -Path $Destination -ItemType Directory
+
 Write-Host "Downloading Windows 11 22H2 July Updates..." -ForegroundColor Cyan 
 Save-MSCatalogUpdate -Guid $22H2JulyUpdates -Destination "E:\Updates\July"  -Language "en-us" -UseBits -Verbose
 
-$JuneDestination = "E:\Updates\June"
-New-Item -Path $Destination -ItemType Directory
+
 Write-Host "Downloading Windows 11 22H2 June Updates..." -ForegroundColor Cyan 
 Save-MSCatalogUpdate -Guid $22H2JuneUpdates -Destination "E:\Updates\June"  -Language "en-us" -UseBits -Verbose
 
-$MayDestination = "E:\Updates\May"
-New-Item -Path $Destination -ItemType Directory
+
 Write-Host "Downloading Windows 11 22H2 May Updates..." -ForegroundColor Cyan 
 Save-MSCatalogUpdate -Guid $22H2MayUpdates -Destination "E:\Updates\May"  -Language "en-us" -UseBits -Verbose
 
-$AprilDestination = "E:\Updates\April"
-New-Item -Path $Destination -ItemType Directory
+
 Write-Host "Downloading Windows 11 22H2 April Updates..." -ForegroundColor Cyan 
 Save-MSCatalogUpdate -Guid $22H2AprilUpdates -Destination "E:\Updates\April"  -Language "en-us" -UseBits -Verbose
 
-$MarchDestination = "E:\Updates\March"
-New-Item -Path $Destination -ItemType Directory
+
 Write-Host "Downloading Windows 11 22H2 March Updates..." -ForegroundColor Cyan 
 Save-MSCatalogUpdate -Guid $22H2MarchUpdates -Destination "E:\Updates\March"  -Language "en-us" -UseBits -Verbose
 
-$FebruaryDestination = "E:\Updates\February"
-New-Item -Path $Destination -ItemType Directory
+
 Write-Host "Downloading Windows 11 22H2 February Updates..." -ForegroundColor Cyan 
 Save-MSCatalogUpdate -Guid $22H2FebruaryUpdates -Destination "E:\Updates\February"  -Language "en-us" -UseBits -Verbose
 
-$JanuaryDestination = "E:\Updates\January"
-New-Item -Path $Destination -ItemType Directory
+
 Write-Host "Downloading Windows 11 22H2 January Updates..." -ForegroundColor Cyan 
 Save-MSCatalogUpdate -Guid $22H2JanuaryUpdates -Destination "E:\Updates\January"  -Language "en-us" -UseBits -Verbose
 
-$PowerShellDestination = "E:\Updates\PowerShell"
-New-Item -Path $Destination -ItemType Directory
+
 Write-Host "Downloading Windows 11 22H2 PowerShell Updates..." -ForegroundColor Cyan 
 Save-MSCatalogUpdate -Guid $PowerShellUpdates -Destination "E:\Updates\PowerShell"  -Language "en-us" -UseBits -Verbose
 
-$MSEdgeDestination = "E:\Updates\MSEdge"
-New-Item -Path $Destination -ItemType Directory
+
 Write-Host "Downloading Windows 11 22H2 Microsoft Edge browser Updates..." -ForegroundColor Cyan 
 Save-MSCatalogUpdate -Guid $EdgeBrowserUpdates -Destination "E:\Updates\MSEdge"  -Language "en-us" -UseBits -Verbose
 
-$WindowsAdminCenterDestination = "E:\Updates\WindowsAdminCenter"
-New-Item -Path $Destination -ItemType Directory
+
 Write-Host "Downloading Windows 11 22H2 Windows Admin Center Updates..." -ForegroundColor Cyan 
 Save-MSCatalogUpdate -Guid $WindowsAdminCenterUpdates -Destination "E:\Updates\WindowsAdminCenter"  -Language "en-us" -UseBits -Verbose
 
-$WindowsAVDestination = "E:\Updates\WindowsAV"
-New-Item -Path $Destination -ItemType Directory
+
 Write-Host "Downloading Windows 11 22H2 Windows Defender Anti-Virus Updates..." -ForegroundColor Cyan 
 Save-MSCatalogUpdate -Guid $WindowsAVUpdates -Destination "E:\Updates\WindowsAV"  -Language "en-us" -UseBits -Verbose
