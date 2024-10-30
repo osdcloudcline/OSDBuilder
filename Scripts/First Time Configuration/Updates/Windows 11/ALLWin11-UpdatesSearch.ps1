@@ -35,7 +35,7 @@ $MSEdgeUpdates | Select-Object Title, Guid | Out-File "E:\Updates\Windows11-21H2
 
 Write-Host
 Write-Host "Retriving Windows 11 21H2 PowerShell Updates..." -ForegroundColor Cyan
-$PowerShellUpdates = Get-MSCatalogUpdate -Search "PowerShell" -AllPages
+$PowerShellUpdates = Get-MSCatalogUpdate -Search "PowerShell" 
 $PowerShellUpdates | Select-Object Title, Guid | Out-File "E:\Updates\Windows11-21H2-PowerShell.txt"
 
 Write-Host
@@ -86,7 +86,7 @@ $MSEdgeUpdates | Select-Object Title, Guid | Out-File "E:\Updates\Windows11-22H2
 
 Write-Host
 Write-Host "Retriving Windows 11 22H2 PowerShell Updates..." -ForegroundColor Cyan
-$PowerShellUpdates = Get-MSCatalogUpdate -Search "PowerShell" -AllPages
+$PowerShellUpdates = Get-MSCatalogUpdate -Search "PowerShell" 
 $PowerShellUpdates | Select-Object Title, Guid | Out-File "E:\Updates\Windows11-22H2-PowerShell.txt"
 
 Write-Host
@@ -101,7 +101,6 @@ $AVUpdates | Select-Object Title, Guid | Out-File "E:\Updates\Windows11-22H2-AV.
 
 Write-Host
 Write-Host "Retriving Windows 11 23H2 Cumulative Updates..." -ForegroundColor Cyan 
-
 $CumulativeUpdates = Get-MSCatalogUpdate -Search "Windows 11 Version 23H2 for x64 Cumulative" -AllPages
 $CumulativeUpdates | Select-Object Title, Guid | Out-File "E:\Updates\Windows11-23H2-Cumulative.txt"
 
@@ -137,7 +136,7 @@ $MSEdgeUpdates | Select-Object Title, Guid | Out-File "E:\Updates\Windows11-23H2
 
 Write-Host
 Write-Host "Retriving Windows 11 23H2 PowerShell Updates..." -ForegroundColor Cyan
-$PowerShellUpdates = Get-MSCatalogUpdate -Search "PowerShell" -AllPages
+$PowerShellUpdates = Get-MSCatalogUpdate -Search "PowerShell" 
 $PowerShellUpdates | Select-Object Title, Guid | Out-File "E:\Updates\Windows11-23H2-PowerShell.txt"
 
 Write-Host
@@ -188,7 +187,7 @@ $MSEdgeUpdates | Select-Object Title, Guid | Out-File "E:\Updates\Windows11-24H2
 
 Write-Host
 Write-Host "Retriving Windows 11 24H2 PowerShell Updates..." -ForegroundColor Cyan
-$PowerShellUpdates = Get-MSCatalogUpdate -Search "PowerShell" -AllPages
+$PowerShellUpdates = Get-MSCatalogUpdate -Search "PowerShell" 
 $PowerShellUpdates | Select-Object Title, Guid | Out-File "E:\Updates\Windows11-24H2-PowerShell.txt"
 
 Write-Host
@@ -239,7 +238,7 @@ $MSEdgeUpdates | Select-Object Title, Guid | Out-File "E:\Updates\Windows11-25H2
 
 Write-Host
 Write-Host "Retriving Windows 11 25H2 PowerShell Updates..." -ForegroundColor Cyan
-$PowerShellUpdates = Get-MSCatalogUpdate -Search "PowerShell" -AllPages
+$PowerShellUpdates = Get-MSCatalogUpdate -Search "PowerShell" 
 $PowerShellUpdates | Select-Object Title, Guid | Out-File "E:\Updates\Windows11-25H2-PowerShell.txt"
 
 Write-Host
