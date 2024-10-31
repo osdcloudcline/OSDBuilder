@@ -4,8 +4,27 @@ Start-Transcript
 
 Write-Host "Creating download directories..." -ForegroundColor Green
 
+$OSDecemberUpdates = "Windows 11 22H2 December Updates"
+$OSOctoberUpdates = "Windows 11 22H2 October Updates"
 
-$OSUpdates = "Windows 11 22H2 October Updates"
+$DecemberDestination = "E:\Updates\December"
+$OctoberPathTest = (Test-Path -Path $DecemberDestination -IsValid)
+If($DecemberPathTest -$false){
+Write-Host "Creating download directory..." -ForegroundColor Green
+New-Item -Path $DecemberDestination -ItemType Directory
+Write-Host
+Write-Host "Downloading $OSDecemberUpdates..." -ForegroundColor Green
+Save-MSCatalogUpdate -Guid "39918a74-0e63-47f7-b913-2e06843ce752" -Destination $OctoberDestination -Language "en-us" -ErrorAction SilentlyContinue -WarningAction SilentlyContinue -InformationAction SilentlyContinue
+Save-MSCatalogUpdate -Guid "d9ea0ee0-ef0f-49ac-9882-1306726dec05" -Destination $OctoberDestination -Language "en-us" -ErrorAction SilentlyContinue -WarningAction SilentlyContinue -InformationAction SilentlyContinue
+Save-MSCatalogUpdate -Guid "d9ea0ee0-ef0f-49ac-9882-1306726dec05" -Destination $OctoberDestination -Language "en-us" -ErrorAction SilentlyContinue -WarningAction SilentlyContinue -InformationAction SilentlyContinue
+}
+ElseIf($DecemberPathTest -eq $true){
+Write-Host
+Write-Host "Downloading $OSDecemberUpdatess..." -ForegroundColor Green
+Save-MSCatalogUpdate -Guid "39918a74-0e63-47f7-b913-2e06843ce752" -Destination $OctoberDestination -Language "en-us" -ErrorAction SilentlyContinue -WarningAction SilentlyContinue -InformationAction SilentlyContinue
+Save-MSCatalogUpdate -Guid "d9ea0ee0-ef0f-49ac-9882-1306726dec05" -Destination $OctoberDestination -Language "en-us" -ErrorAction SilentlyContinue -WarningAction SilentlyContinue -InformationAction SilentlyContinue
+Save-MSCatalogUpdate -Guid "d9ea0ee0-ef0f-49ac-9882-1306726dec05" -Destination $OctoberDestination -Language "en-us" -ErrorAction SilentlyContinue -WarningAction SilentlyContinue -InformationAction SilentlyContinue
+}
 
 $OctoberDestination = "E:\Updates\October"
 $OctoberPathTest = (Test-Path -Path $OctoberDestination -IsValid)
@@ -13,7 +32,7 @@ If($OctoberPathTest -$false){
 Write-Host "Creating download directory..." -ForegroundColor Green
 New-Item -Path $OctoberDestination -ItemType Directory
 Write-Host
-Write-Host "Downloading $OSUpdates..." -ForegroundColor Green
+Write-Host "Downloading $OSOctoberUpdates..." -ForegroundColor Green
 Save-MSCatalogUpdate -Guid "3cbf01aa-02f7-4b95-891f-9e51e94a16ab" -Destination $OctoberDestination -Language "en-us" -ErrorAction SilentlyContinue -WarningAction SilentlyContinue -InformationAction SilentlyContinue
 Save-MSCatalogUpdate -Guid "a9787757-bf1e-4d21-8114-464fd65ea313" -Destination $OctoberDestination -Language "en-us" -ErrorAction SilentlyContinue -WarningAction SilentlyContinue -InformationAction SilentlyContinue
 Save-MSCatalogUpdate -Guid "ec62b239-cf86-4d9c-81ed-e9d24a683ce1" -Destination $OctoberDestination -Language "en-us" -ErrorAction SilentlyContinue -WarningAction SilentlyContinue -InformationAction SilentlyContinue
@@ -32,7 +51,7 @@ Save-MSCatalogUpdate -Guid "1c9c1cae-4f5e-44df-a887-f4454ed80851" -Destination $
 }
 ElseIf($OctoberPathTest -eq $true){
 Write-Host
-Write-Host "Downloading $OSUpdates..." -ForegroundColor Green
+Write-Host "Downloading $OSOctoberUpdates..." -ForegroundColor Green
 Save-MSCatalogUpdate -Guid "3cbf01aa-02f7-4b95-891f-9e51e94a16ab" -Destination $OctoberDestination -Language "en-us" -ErrorAction SilentlyContinue -WarningAction SilentlyContinue -InformationAction SilentlyContinue
 Save-MSCatalogUpdate -Guid "a9787757-bf1e-4d21-8114-464fd65ea313" -Destination $OctoberDestination -Language "en-us" -ErrorAction SilentlyContinue -WarningAction SilentlyContinue -InformationAction SilentlyContinue
 Save-MSCatalogUpdate -Guid "ec62b239-cf86-4d9c-81ed-e9d24a683ce1" -Destination $OctoberDestination -Language "en-us" -ErrorAction SilentlyContinue -WarningAction SilentlyContinue -InformationAction SilentlyContinue
