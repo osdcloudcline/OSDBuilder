@@ -2,7 +2,7 @@ $22H2DecemberUpdates = New-Object System.Collections.ArrayList
 $22H2DecemberUpdates = @(
 '39918a74-0e63-47f7-b913-2e06843ce752',
 'd9ea0ee0-ef0f-49ac-9882-1306726dec05',
-'3e0fd259-cda4-4ba9-a0da-c9d5f7cd87c6'
+'d9ea0ee0-ef0f-49ac-9882-1306726dec05'
 )
 
 $22H2NovemberUpdates = New-Object System.Collections.ArrayList
