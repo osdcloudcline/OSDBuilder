@@ -13,14 +13,15 @@ Save-MSCatalogUpdate -Guid "115a80f7-907e-4e44-8da2-438a9d365967" -Destination $
 # .NET 8.0.x Updates - 2024
 Write-Host
 Write-Host "Downloading .NET 8.0.x 2024 updates..." -ForegroundColor Cyan
-Save-MSCatalogUpdate -Guid "f5601a74-ee35-4e6c-b2e2-094a00f28349" -Destination $Destination -Language "en-us" -ErrorAction SilentlyContinue -WarningAction SilentlyContinue -InformationAction SilentlyContinue
-Save-MSCatalogUpdate -Guid "a80a689d-4f11-4a55-8e92-ffdc7d84f582" -Destination $Destination -Language "en-us" -ErrorAction SilentlyContinue -WarningAction SilentlyContinue -InformationAction SilentlyContinue
-Save-MSCatalogUpdate -Guid "72f7e09b-b23b-49e7-9db7-c5f1c57ed664" -Destination $Destination -Language "en-us" -ErrorAction SilentlyContinue -WarningAction SilentlyContinue -InformationAction SilentlyContinue
-Save-MSCatalogUpdate -Guid "75530cdd-a62c-4855-89e7-a0a2554300f5" -Destination $Destination -Language "en-us" -ErrorAction SilentlyContinue -WarningAction SilentlyContinue -InformationAction SilentlyContinue
-Save-MSCatalogUpdate -Guid "87bca70f-4751-408d-bcc3-91472c7203c6" -Destination $Destination -Language "en-us" -ErrorAction SilentlyContinue -WarningAction SilentlyContinue -InformationAction SilentlyContinue
-Save-MSCatalogUpdate -Guid "7c63eada-841d-4b70-8099-3c8baf329ec4" -Destination $Destination -Language "en-us" -ErrorAction SilentlyContinue -WarningAction SilentlyContinue -InformationAction SilentlyContinue
-Save-MSCatalogUpdate -Guid "f5bf5124-e10f-443b-87e1-f41edb56ba1a" -Destination $Destination -Language "en-us" -ErrorAction SilentlyContinue -WarningAction SilentlyContinue -InformationAction SilentlyContinue
-Save-MSCatalogUpdate -Guid "321ac36f-3e47-4b8b-a478-f3b4e2acb0e9" -Destination $Destination -Language "en-us" -ErrorAction SilentlyContinue -WarningAction SilentlyContinue -InformationAction SilentlyContinue
+Save-WebFile -SourceUrl "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2024/10/dotnet-runtime-8.0.10-win-x64_f301e4b2e6f1ab5a161e15187cd5f21894a15037.exe" -DestinationDirectory $Destination
+Save-WebFile -SourceUrl "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2024/08/dotnet-runtime-8.0.8-win-x64_2904ccece8829423a636f8cb3d176efffa9d8921.exe" -DestinationDirectory $Destination
+Save-WebFile -SourceUrl "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2024/07/dotnet-runtime-8.0.7-win-x64_cf9a645b29ef8bd76774ab4ca8df7507c9cd7bf7.exe" -DestinationDirectory $Destination
+Save-WebFile -SourceUrl "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2024/05/dotnet-runtime-8.0.6-win-x64_5700122ac43de44d7f8eeb5ef03507d371e25cca.exe" -DestinationDirectory $Destination
+Save-WebFile -SourceUrl "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2024/04/dotnet-runtime-8.0.4-win-x64_465fcee2590aefbcf478c8d6cbe8133ed8799c28.exe" -DestinationDirectory $Destination
+Save-WebFile -SourceUrl "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2024/03/dotnet-runtime-8.0.3-win-x64_9602ead47af824bb8bb272a8a4503d638a9928d6.exe" -DestinationDirectory $Destination
+Save-WebFile -SourceUrl "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2024/02/dotnet-runtime-8.0.2-win-x64_7a91bdaa1ad5079c948bc1e327e7de8123f9c9c0.exe" -DestinationDirectory $Destination
+Save-WebFile -SourceUrl "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/12/dotnet-runtime-8.0.1-win-x64_fd5a5e7fc3ee705ae7cd18facec46f9f69be0f88.exe" -DestinationDirectory $Destination
+
 
 # .NET 7.0.x Updates - 2024
 Write-Host
